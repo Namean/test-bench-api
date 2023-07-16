@@ -1,0 +1,17 @@
+https://stackoverflow.com/questions/947215/how-to-get-a-list-of-column-names-on-sqlite3-database
+https://dba.stackexchange.com/questions/40656/how-to-properly-format-sqlite-shell-output
+https://news.ycombinator.com/item?id=26164385
+
+
+
+.mode column || .mode line
+.headers ON;
+.width 
+.separator ROW "\n"
+.nullvalue NULL;
+
+
+
+PRAGMA table_info(table_name);
+
+~/.sqliterc
