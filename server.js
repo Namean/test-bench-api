@@ -52,13 +52,14 @@ app.post("/users", urlencodedParser, cors(), (req, res) => {
   res.send("data rec'd");
 });
 
-app.get("/employees", (req, res) => {
+app.get("/employees", cors(), (req, res) => {
   let queryString = "SELECT * FROM employees";
   runQuery(queryString, (row) => {
-    res.json({ data: row });
+    res.send(row);
   });
 });
 
 app.listen(port, () => {
+  console.log(`React v18.16.0 running at ${ip_address}:3000`);
   console.log(`Express v4.18.2 running at ${ip_address}:${port}`);
 });
